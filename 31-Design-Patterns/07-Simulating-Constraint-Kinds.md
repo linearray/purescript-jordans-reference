@@ -33,14 +33,14 @@ However, the above will not compile because PureScript does not yet have "Constr
 ```purescript
 -- PureScript with CPS
 type WithMyMonad m a =
-  ( MonadAff m
-  , ConsoleIO m
-  , OtherTypeClass1 m
-  , OtherTypeClass2 m
-  , OtherTypeClass3 m
-  , OtherTypeClass4 m
-  , OtherTypeClass5 m
-  ) => a
+     MonadAff m
+  => ConsoleIO m
+  => OtherTypeClass1 m
+  => OtherTypeClass2 m
+  => OtherTypeClass3 m
+  => OtherTypeClass4 m
+  => OtherTypeClass5 m
+  => a
 
 -- Then our function's type signature looks like this:
 f :: forall m a. WithMyMonad m (Int -> m a)
