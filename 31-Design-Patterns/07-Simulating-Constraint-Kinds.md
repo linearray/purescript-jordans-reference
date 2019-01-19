@@ -43,9 +43,9 @@ type WithMyMonad m a =
   ) => a
 
 -- Then our function's type signature looks like this:
-f :: forall m a. MyMonad m (Int -> m a)
+f :: forall m a. WithMyMonad m (Int -> m a)
 
 -- It seems like in situations where we don't have an argument,
 -- we can write it like this:
-g :: forall m a. MyMonad m (m a)
+g :: forall m a. WithMyMonad m (m a)
 ```
